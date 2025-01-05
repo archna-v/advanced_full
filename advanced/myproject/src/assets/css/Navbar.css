@@ -1,0 +1,27 @@
+ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-evenly;
+    list-style-type: none;
+    background-color: rgb(48, 30, 210);
+    color: aliceblue;
+    padding: 10px;
+  }
+  
+  .link {
+    cursor: pointer;
+    padding: 3px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: aliceblue;
+  }
+  
+  .link:hover {
+      background-color: white;
+      color: rgb(30, 204, 210);
+    }
+  .button:hover{
+    background-color: #e012a9;
+    color: #1ed251;
+  }
