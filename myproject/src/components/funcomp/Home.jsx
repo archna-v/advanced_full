@@ -1,4 +1,4 @@
-import "../../assets/css/Home.css";
+import "./css/Home.css";
 var Home = () => {
   var styling = {
     fontSize: "30px",
