@@ -11,7 +11,7 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import Footer from './components/funcomp/Footer';
 import UseEffect from './components/funcomp/UseEffect'
 import UseRef from './components/funcomp/UseRef'
-import UseContext from './components/funcomp/Usecontext';
+import UseContext from './components/funcomp/UseContext';
 import UseMemo from './components/funcomp/UseMemo';
 import Images from './components/funcomp/Images';
 import Signup from './components/Authentication/Signup';
