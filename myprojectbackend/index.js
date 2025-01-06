@@ -1,4 +1,4 @@
-/*var express = require('express')
+var express = require('express')
 var path = require('path')
 var mdb = require('mongoose')
 var app =  express()
@@ -57,41 +57,32 @@ app.post('/signup',async(req,res)=>{
     }
     
 })
-app.post('/login',async(req,res)=>{
-    var {email,password} = req.body
-    try{
-            var existingUser = await User.findOne({email:email})
-            //console.log(existingUser)
-            if(existingUser)
-            {
-                if(existingUser.password !== password)
-                {
-                res.json({message:"invalid credentials",isloggedIn:false})
-                }
-                else{
-                    res.json({message:"login sucessful",isloggedIn:true})
-                }
-            }
-            else{
-                console.log("inside else")
-                
-                res.json({message:"login failed",isloggedIn:false})
-            }
-          //  res.json({message:"login successful",isloggedIn:true})
+app.post("/signin", async (req, res) => {
+    var { email, password } = req.body;
+    try {
+      var existingUser = await User.findOne({ email: email });
+      console.log(existingUser);
+      if (existingUser) {
+        if (existingUser.password !== password) {
+          res.json({ message: "login successful..", isLoggedIn: true });
+        } else {
+          res.json({ message: "invalid credentials", isLoggedIn: false });
+        }
+      } else {
+        res.json({ message: "Login falied..", isLoggedIn: false });
+      }
+    } catch (err) {
+      console.log("login failed....");
     }
-    catch(err){
-        console.log("login failed")
-    }
-
-})
+  });
 app.get('/json',(req,res)=>{
     res.json({server:"welcome to backend",url:"localhost",port:PORT})
 })
 app.listen(PORT,()=>{
     console.log(`Server started\nUrl: http://localhost:${PORT}`)
 })
-*/
 
+/*
 var express = require("express");
 var path = require("path");
 var mdb = require("mongoose");
@@ -174,4 +165,4 @@ app.post("/signin", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Backend Server Started\nUrl: http://localhost:${PORT}`);
 });
-
+*/
