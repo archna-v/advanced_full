@@ -15,7 +15,7 @@ mdb.connect(process.env.MONGO_URL).then(()=>{
     console.log("Check ur connection string")
 })
 app.get('/',(req,res)=>{
-    res.send("welcome to backend hiji")
+    res.send("welcome to backend hii")
 })
 app.get('/static',(req,res)=>{
     console.log(__dirname)
