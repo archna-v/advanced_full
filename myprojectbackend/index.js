@@ -153,26 +153,24 @@ app.get('/getsignup',async(req,res)=>{
         res.send(err)
     }
 })
-app.post('/signin',async(req,res)=>{
-    var {email,password} = req.body
-    try{
-        var existingUser = await User.findOne({email:email})
-        if(existingUser){
-            if(existingUser.password !== password){
-                res.json({message:"Invalid Credentials",isLoggedIn:false})
-            }
-            else{
-                res.json({message:"Login Successful",isLoggedIn:true})
-            }
+app.post("/signin", async (req, res) => {
+    var { email, password } = req.body;
+    try {
+      var existingUser = await User.findOne({ email: email });
+      console.log(existingUser);
+      if (existingUser) {
+        if (existingUser.password == password) {
+          res.json({ message: "login successful..", isLoggedIn: true });
+        } else {
+          res.json({ message: "invalid credentials", isLoggedIn: false });
         }
-        else{
-            res.json({message:"User Not Found",isLoggedIn:false})
-        }
+      } else {
+        res.json({ message: "Login falied..", isLoggedIn: false });
+      }
+    } catch (err) {
+      console.log("login failed....");
     }
-    catch(err){
-        console.log("Login Failed");
-    }
-})
+  });
 app.listen(PORT, () => {
   console.log(`Backend Server Started\nUrl: http://localhost:${PORT}`);
 });
