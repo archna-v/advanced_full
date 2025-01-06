@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import {ThemeProvider} from '../Usecontext';
+import {ThemeProvider} from '../UseContext';
 
 var StudentResults= () =>{
     var result = useContext(ThemeProvider);
