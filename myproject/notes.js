@@ -50,6 +50,9 @@
 //npm i path in vs code terminal ---->3
 //we need to have both api nd backend call 
 
+//NOTE:
+//CAUSE OF 404 ERROR IN VERCEL: SERVER SIDE RENDERING
+
 
 
 
