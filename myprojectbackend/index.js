@@ -2,10 +2,14 @@ var express = require('express')
 var path = require('path')
 var mdb = require('mongoose')
 var app =  express()
+var cors=require('cors')
 var User = require('./models/users')
-const PORT = 3003
+const PORT = 3001
+const dotenv=require('dotenv')
 app.use(express.json())
-mdb.connect("mongodb://localhost:27017/").then(()=>{
+app.use(cors())
+dotenv.config();
+mdb.connect(process.env.MONGO_URL).then(()=>{
     console.log("Mongodb connection successful")
 }).catch(()=>{
     console.log("Check ur connection string")

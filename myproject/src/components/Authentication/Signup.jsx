@@ -63,7 +63,7 @@ const Signup = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:3003/signup", userData);
+      const response = await axios.post("http://localhost:3001/signup", userData);
       alert(response.data); 
       navigate("/signin");  
     } catch (error) {

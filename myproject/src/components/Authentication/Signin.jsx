@@ -51,7 +51,7 @@ const Signin = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:3003/signin", loginData);
+      const response = await axios.post("http://localhost:3001/signin", loginData);
       if (response.data.isloggedIn) {
         alert("Login successful!");
         navigate("/");  
